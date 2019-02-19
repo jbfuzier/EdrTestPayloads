@@ -1,24 +1,22 @@
+<!DOCTYPE html>
+<html>
 <head>
-<title>HTA Test</title>
-<HTA:APPLICATION 
-     APPLICATIONNAME="HTA Test"
-     SCROLL="yes"
-     SINGLEINSTANCE="yes"
->
-</head>
-
-<script language="VBScript">
-
-Window.ReSizeTo 0, 0
-Window.moveTo -2000,-2000
-Set objShell = CreateObject("Wscript.Shell")
-objShell.Run "calc.exe"
-self.close
-
+<HTA:APPLICATION icon="#" WINDOWSTATE="minimize" SHOWINTASKBAR="no" SYSMENU="no"  CAPTION="no" />
+<script type="text/vbscript">
+ 
+Private Sub Hello()
+    MsgBox "Hello from sevagas" & vbCrLf & "Remember to always be careful when you enable MS Office macros." & vbCrLf & "Have a nice day!"
+End Sub
+ 
+' Auto launch when VBA enabled
+Sub AutoOpen()
+    Hello
+End Sub
+ 
+AutoOpen
+Close
 </script>
-
+</head>
 <body>
-
 </body>
-
-
+</html>
